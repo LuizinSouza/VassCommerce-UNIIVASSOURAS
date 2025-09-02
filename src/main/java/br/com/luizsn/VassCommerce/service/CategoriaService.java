@@ -17,7 +17,13 @@ public class CategoriaService {
         categorias.add(new Categoria(3,"blusas masculinas", "blusas","blusas masculinas"));
     }
 
-    public List<Categoria> ListarTodos(){
+    public List<Categoria> listarTodos(){
     return categorias;
+    }
+
+    public List<Categoria> buscarPorNome(String nome){
+        return categorias.stream()
+                .filter(c -> c.getNome().toLowerCase().contains(nome.toLowerCase()))
+                .toList();
     }
 }
