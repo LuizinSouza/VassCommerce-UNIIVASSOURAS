@@ -41,7 +41,9 @@ public class ProdutoService {
                 .orElseThrow(() -> new RuntimeException("Este produto não existe! id:"+ id));
     }
 
-
+    public List<Produto> listarTodos(){
+        return produtos;
+    }
 
 
 
