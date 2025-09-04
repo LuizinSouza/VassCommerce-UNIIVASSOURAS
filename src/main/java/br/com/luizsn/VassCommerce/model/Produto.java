@@ -12,8 +12,9 @@ public class Produto {
     private Date dataCadastro;
     private Date dataUltimaAtualizacao;
     private BigDecimal valorUnitario;
+    private int idCategoria;
 
-    public Produto(int id, String nome, String descricao, String fotoUrl,Date dataCadastro, Date dataUltimaAtualizacao, BigDecimal valorUnitario) {
+    public Produto(int id, String nome, String descricao, String fotoUrl,Date dataCadastro, Date dataUltimaAtualizacao, BigDecimal valorUnitario, int IdCategoria) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -21,6 +22,7 @@ public class Produto {
         this.dataCadastro = dataCadastro;
         this.dataUltimaAtualizacao = dataUltimaAtualizacao;
         this.valorUnitario =valorUnitario;
+        this.idCategoria = idCategoria;
     }
 
     public int getId() {
@@ -77,6 +79,10 @@ public class Produto {
 
     public void setValorUnitario(BigDecimal valorUnitario) {
         this.valorUnitario = valorUnitario;
+    }
+
+    public int getIdCategoria() {
+        return idCategoria;
     }
 }
 

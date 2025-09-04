@@ -1,6 +1,7 @@
 package br.com.luizsn.VassCommerce.service;
 
 
+import br.com.luizsn.VassCommerce.controller.ProdutoController;
 import br.com.luizsn.VassCommerce.model.Produto;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ public class ProdutoService {
                 "notebook",
                 "Notebook 16gb RAM",
                 "http//lojaweb/notebook.jpg",
-                new Date(),new Date(), new BigDecimal("4500")
+                new Date(),new Date(), new BigDecimal("4500"),1
         ));
 
         produtos.add(new Produto(
@@ -30,7 +31,7 @@ public class ProdutoService {
                 "teclado gamer",
                 "teclado mecanico 80%",
                 "http://lojaweb/jpg",
-                new Date(),new Date(), new BigDecimal("4500")
+                new Date(),new Date(), new BigDecimal("4500"),1
         ));
     }
 
@@ -43,6 +44,12 @@ public class ProdutoService {
 
     public List<Produto> listarTodos(){
         return produtos;
+    }
+
+    public List<Produto> listarPorCategoria(int idCategoria){
+        return produtos.stream()
+                .filter(produto -> produto.getIdCategoria() == idCategoria)
+                .toList();
     }
 
 
