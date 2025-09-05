@@ -8,6 +8,9 @@ public class FormasDePagamento {
     private boolean exluido;
 
     public FormasDePagamento(long id, Date dataCriacao, boolean excluido) {
+        this.id = id;
+        this.dataCriacao = dataCriacao;
+        this.exluido = exluido;
     }
 
     public long getId() {

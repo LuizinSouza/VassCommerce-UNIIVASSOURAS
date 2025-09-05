@@ -4,11 +4,13 @@ package br.com.luizsn.VassCommerce.controller;
 
 
 import br.com.luizsn.VassCommerce.model.Cliente;
+import br.com.luizsn.VassCommerce.model.FormasDePagamento.FormasDePagamento;
 import br.com.luizsn.VassCommerce.service.ClienteService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 @RequestMapping
@@ -24,5 +26,12 @@ public class ClienteController {
     @GetMapping("/cliente/{id}")
     public Cliente VisuzalizarDadosCliente(@PathVariable long id){
         return clienteService.dadosCliente(id);
+    }
+
+
+    // GET cliente/{id}/forma-de-pagamento -> Listar todas as formas de pagamento do cliente
+    @GetMapping("/cliente/{id}/forma-de-pagamento")
+    public List<FormasDePagamento> VisualizarFormasDePagamento(@PathVariable long id){
+        return clienteService.formasDePagamentosCliente(id);
     }
 }
