@@ -35,7 +35,7 @@ public class ProdutoService {
         ));
     }
 
-    public Produto buscarProdutoId(int id){
+    public Produto buscarProdutoId(long id){
         return produtos.stream()
                 .filter(p-> p.getId() == id)
                 .findFirst()
@@ -46,7 +46,7 @@ public class ProdutoService {
         return produtos;
     }
 
-    public List<Produto> listarPorCategoria(int idCategoria){
+    public List<Produto> listarPorCategoria(long idCategoria){
         return produtos.stream()
                 .filter(produto -> produto.getIdCategoria() == idCategoria)
                 .toList();

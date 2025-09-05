@@ -29,7 +29,7 @@ public class ClienteService {
 
     //visualizar dados do cliente pelo ID
 
-    public Cliente dadosCliente(int id){
+    public Cliente dadosCliente(long id){
         return clientes.stream()
                 .filter(c -> c.getId() == id)
                 .findFirst()

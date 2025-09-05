@@ -1,24 +1,24 @@
 package br.com.luizsn.VassCommerce.model;
 
 public class Categoria {
-    private int id;
+    private long id;
     private String imagemSimboloUrl;
     private String nome;
     private String descricao;
 
 
-    public Categoria(int id, String imagemSimboloUrl, String nome, String descricao) {
+    public Categoria(long id, String imagemSimboloUrl, String nome, String descricao) {
         this.id = id;
         this.imagemSimboloUrl = imagemSimboloUrl;
         this.nome = nome;
         this.descricao = descricao;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

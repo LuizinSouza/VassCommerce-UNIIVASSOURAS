@@ -21,7 +21,7 @@ public class ProdutoController {
 
     //GET /produto/{id} -> vizualiza os dados do produto
     @GetMapping("/produto/{id}")
-    public Produto buscarProdutoPorId(@PathVariable int id){
+    public Produto buscarProdutoPorId(@PathVariable long id){
         return  produtoService.buscarProdutoId(id);
     }
     @GetMapping("/produto")
@@ -29,8 +29,8 @@ public class ProdutoController {
         return produtoService.listarTodos();
     }
     //GET /categoria/{idCategoria}/produto")
-    @GetMapping("/categoria/idCategoria}/produto")
-    public List<Produto> listarProdutosCategoria(@PathVariable int idCategoria){
+    @GetMapping("/categoria/{idCategoria}/produto")
+    public List<Produto> listarProdutosCategoria(@PathVariable long idCategoria){
         return produtoService.listarPorCategoria(idCategoria);
     }
 

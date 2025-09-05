@@ -22,7 +22,7 @@ public class ClienteController {
     //Get /CLIENTE/{id}/ -> visualizar dados do cliente
 
     @GetMapping("/cliente/{id}")
-    public Cliente VisuzalizarDadosCliente(@PathVariable int id){
+    public Cliente VisuzalizarDadosCliente(@PathVariable long id){
         return clienteService.dadosCliente(id);
     }
 }
