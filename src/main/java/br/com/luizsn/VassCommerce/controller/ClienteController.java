@@ -4,6 +4,7 @@ package br.com.luizsn.VassCommerce.controller;
 
 
 import br.com.luizsn.VassCommerce.model.Cliente;
+import br.com.luizsn.VassCommerce.model.Endereco.Endereco;
 import br.com.luizsn.VassCommerce.model.FormasDePagamento.FormasDePagamento;
 import br.com.luizsn.VassCommerce.service.ClienteService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,5 +34,11 @@ public class ClienteController {
     @GetMapping("/cliente/{id}/forma-de-pagamento")
     public List<FormasDePagamento> VisualizarFormasDePagamento(@PathVariable long id){
         return clienteService.formasDePagamentosCliente(id);
+    }
+
+    //Get /cliente/{id}Cliente/endereco -> buscar pelos dados do endereço do cliente
+    @GetMapping("/cliente/{id}/endereco")
+    public Endereco VisualizarEnderecosCliente(@PathVariable long id){
+        return  clienteService.listarEnderecoCliente(id);
     }
 }

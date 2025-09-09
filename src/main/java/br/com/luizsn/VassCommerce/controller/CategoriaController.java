@@ -18,8 +18,8 @@ public class CategoriaController {
     public CategoriaController(CategoriaService categoriaService) {
         this.categoriaService = categoriaService;
     }
-    // GET /categoria - listar todas Categorias
-    //  GET /categoria - listar produtos da categoria
+
+    //  GET /categoria - filtragem de lista por nome
     @GetMapping("/categoria")
     public List<Categoria> listarCategorias(@RequestParam(required = false) String nome ) {
         if (nome != null && !nome.isBlank()) {

@@ -1,5 +1,6 @@
 package br.com.luizsn.VassCommerce.model;
 
+import br.com.luizsn.VassCommerce.model.Endereco.Endereco;
 import br.com.luizsn.VassCommerce.model.FormasDePagamento.FormasDePagamento;
 import  java.time.LocalDate;
 import java.util.Date;
@@ -10,13 +11,15 @@ public class Cliente extends  Usuario{
     private LocalDate dataNascimento;
     private String cpf;
     private List<FormasDePagamento> formasDePagamento;
+    private Endereco endereco;
 
     public Cliente(long id,String nomeCompleto,String email,String senha,Date dataCadastro,Date dataUltimaAtualizacao,String fotoUrl,
-                   LocalDate dataNascimento,String cpf,List<FormasDePagamento> formasDePagamentos) {
+                   LocalDate dataNascimento,String cpf,List<FormasDePagamento> formasDePagamentos, Endereco endereco) {
         super(id,nomeCompleto,email,senha,dataCadastro,dataUltimaAtualizacao,fotoUrl);
         this.dataNascimento =dataNascimento;
         this.cpf = cpf;
         this.formasDePagamento = formasDePagamentos;
+        this.endereco= endereco;
     }
 
 
@@ -38,8 +41,11 @@ public class Cliente extends  Usuario{
 
     public List<FormasDePagamento> getFormasDePagamento() {
         return formasDePagamento;
+
+
     }
 
-
-
+    public Endereco getEndereco() {
+        return endereco;
+    }
 }
