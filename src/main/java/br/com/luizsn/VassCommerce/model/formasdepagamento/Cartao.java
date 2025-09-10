@@ -1,4 +1,4 @@
-package br.com.luizsn.VassCommerce.model.FormasDePagamento;
+package br.com.luizsn.VassCommerce.model.formasdepagamento;
 
 
 import java.util.Date;

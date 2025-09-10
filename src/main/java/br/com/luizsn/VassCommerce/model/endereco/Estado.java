@@ -1,4 +1,4 @@
-package br.com.luizsn.VassCommerce.model.Endereco;
+package br.com.luizsn.VassCommerce.model.endereco;
 
 public class Estado {
     private long id;

@@ -1,12 +1,12 @@
 package br.com.luizsn.VassCommerce.service;
 
 import br.com.luizsn.VassCommerce.model.Cliente;
-import br.com.luizsn.VassCommerce.model.Endereco.Cidade;
-import br.com.luizsn.VassCommerce.model.Endereco.Endereco;
-import br.com.luizsn.VassCommerce.model.Endereco.Estado;
-import br.com.luizsn.VassCommerce.model.FormasDePagamento.Cartao;
-import br.com.luizsn.VassCommerce.model.FormasDePagamento.FormasDePagamento;
-import br.com.luizsn.VassCommerce.model.FormasDePagamento.TipoCartao;
+import br.com.luizsn.VassCommerce.model.endereco.Cidade;
+import br.com.luizsn.VassCommerce.model.endereco.Endereco;
+import br.com.luizsn.VassCommerce.model.endereco.Estado;
+import br.com.luizsn.VassCommerce.model.formasdepagamento.Cartao;
+import br.com.luizsn.VassCommerce.model.formasdepagamento.FormasDePagamento;
+import br.com.luizsn.VassCommerce.model.formasdepagamento.TipoCartao;
 import org.springframework.stereotype.Service;
 
 import org.springframework.web.bind.annotation.RequestParam;
