@@ -7,6 +7,7 @@ import br.com.luizsn.VassCommerce.service.EstadoService;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,8 +23,16 @@ public class EstadoController {
         this.estadoService = estadoService;
     }
 
+    //GET /estado -> Listar Todos os Estados
     @GetMapping("/estado")
     public List<Estado> listarEstados(){
         return estadoService.todosEstados();
+    }
+
+    //Get ("/estado{idEstado}/cidade") -> listas todass cidades de um estado
+
+    @GetMapping("/estado/{idEstado}/cidade")
+    public List<Cidade> listarCidadesEstado(@PathVariable long idEstado){
+        return estadoService.todasCidadesEstado(idEstado);
     }
 }
