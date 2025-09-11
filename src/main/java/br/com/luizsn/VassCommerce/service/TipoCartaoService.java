@@ -12,6 +12,7 @@ import java.util.Arrays;
 
 @Service
 public class TipoCartaoService {
+    //Listar todos tipos de cartão
     public List<TipoCartao>todosTipoCartao(){
         return Arrays.asList(TipoCartao.values());
     }

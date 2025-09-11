@@ -19,6 +19,7 @@ public class CategoriaController {
         this.categoriaService = categoriaService;
     }
 
+    //  GET /categoria - Lista todas Categorias
     //  GET /categoria - filtragem de lista por nome
     @GetMapping("/categoria")
     public List<Categoria> listarCategorias(@RequestParam(required = false) String nome ) {

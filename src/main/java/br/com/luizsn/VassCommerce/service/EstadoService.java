@@ -18,8 +18,7 @@ public class EstadoService {
     public EstadoService(ClienteService clienteService){
         this.cliente = clienteService.getCliente();
     }
-
-
+    //LISTAR TODOS OS ESTADOS
     public List<Estado> todosEstados(){
         return cliente.stream()
                 .map(Cliente::getEndereco)
@@ -29,6 +28,7 @@ public class EstadoService {
                 .collect(Collectors.toList());
     }
 
+    //LISTAR TODASS CIDADES DE UM ESTADO
     public List<Cidade> todasCidadesEstado(@PathVariable long idEstado){
         return cliente.stream()
                 .map(Cliente::getEndereco)
