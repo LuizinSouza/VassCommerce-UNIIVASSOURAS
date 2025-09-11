@@ -7,8 +7,8 @@ import br.com.luizsn.VassCommerce.model.endereco.Estado;
 import br.com.luizsn.VassCommerce.model.formasdepagamento.Cartao;
 import br.com.luizsn.VassCommerce.model.formasdepagamento.FormasDePagamento;
 import br.com.luizsn.VassCommerce.model.formasdepagamento.TipoCartao;
-import org.springframework.stereotype.Service;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.time.LocalDate;
 import java.util.*;
