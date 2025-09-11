@@ -70,4 +70,8 @@ public class ClienteService {
                 .findFirst()
                 .orElseThrow(() -> new NoSuchElementException("Cliente não encontrado"));
     }
+
+    public List<Cliente> getCliente(){
+        return cliente;
+    }
 }
