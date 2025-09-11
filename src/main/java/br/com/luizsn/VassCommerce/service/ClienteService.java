@@ -1,6 +1,7 @@
 package br.com.luizsn.VassCommerce.service;
 
 import br.com.luizsn.VassCommerce.model.Cliente;
+import br.com.luizsn.VassCommerce.model.Produto;
 import br.com.luizsn.VassCommerce.model.endereco.Cidade;
 import br.com.luizsn.VassCommerce.model.endereco.Endereco;
 import br.com.luizsn.VassCommerce.model.endereco.Estado;
@@ -8,8 +9,14 @@ import br.com.luizsn.VassCommerce.model.formasdepagamento.Cartao;
 import br.com.luizsn.VassCommerce.model.formasdepagamento.FormasDePagamento;
 import br.com.luizsn.VassCommerce.model.formasdepagamento.TipoCartao;
 
+
+import br.com.luizsn.VassCommerce.model.pedido.ItemPedido;
+import br.com.luizsn.VassCommerce.model.pedido.Pedido;
+import br.com.luizsn.VassCommerce.model.pedido.PedidoStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -21,6 +28,7 @@ public class ClienteService {
     LocalDate dataNascimento = LocalDate.of(2005, 3, 3);
     public ClienteService(){
 
+
                 List<FormasDePagamento> formasDePagamentos = new ArrayList<>();
                 formasDePagamentos.add(new Cartao(123, new Date(), false, TipoCartao.CREDITO));
                 formasDePagamentos.add(new Cartao(122, new Date(), false,TipoCartao.DEBITO));
@@ -31,6 +39,13 @@ public class ClienteService {
                 Endereco endereco = new Endereco(1,"Rua A",123,"0100-000","","11999999999",
                         "Centro",new Date(), new Date(),rioDeJaneiro);
 
+                ProdutoService produtoService = new ProdutoService();
+                Produto notebook = produtoService.buscarProdutoId(1);
+                ItemPedido itemPedido1 = new ItemPedido(1, 1, notebook.getValorUnitario(), notebook);
+                Pedido pedido1 = new Pedido(1, new Date(),
+                itemPedido1.getValorUnitario().multiply(new BigDecimal(itemPedido1.getQuantidade())),
+                PedidoStatus.AGUARDANDO_PAGAMENTO, itemPedido1);
+
                 cliente.add(new Cliente(
                 1,
                 "Luiz Henrique",
@@ -40,7 +55,7 @@ public class ClienteService {
                 "",
                 dataNascimento,
                 "1234567",
-                formasDePagamentos,endereco
+                formasDePagamentos,endereco,pedido1
         ));
     }
 
